@@ -149,7 +149,7 @@ class Table extends AbstractHelper implements ServiceLocatorAwareInterface
         foreach($this->data as $line){
             $html .= '\t\t<tr>' .PHP_EOL;        
             foreach($this->columns as $column){
-                $html .= '\t\t\t' . $column->render($line) . PHP_EOL;
+                $html .= '\t\t\t<td>' . $column->render($line) . '</td>' . PHP_EOL;
             }
             $html .= '\t\t</tr>' .PHP_EOL;        
         }
