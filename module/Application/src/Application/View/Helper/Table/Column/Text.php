@@ -18,7 +18,7 @@ class Text extends AbstractColumn
      * @return type
      */
     public function render($line) {
-        return '<td>' .$line[$this->valueKey]. '</td>';
+        return $line[$this->valueKey];
     }
 
 }

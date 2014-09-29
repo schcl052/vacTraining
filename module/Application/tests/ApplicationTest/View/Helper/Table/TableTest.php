@@ -221,8 +221,8 @@ class TableTest extends PhpunitTestCase
         //prepare the data values
         $data = 
         [
-            ['key1' => '11', 'key2' => '12', 'key3' => '13'],
-            ['key1' => '21', 'key2' => '22', 'key3' => '23'],
+            ['key1' => 'Value 11', 'key2' => 'Value 12', 'key3' => 'Value 13'],
+            ['key1' => 'Value 21', 'key2' => 'Value 22', 'key3' => 'Value 23'],
         ];
       
         //prepare the columns
@@ -239,8 +239,8 @@ class TableTest extends PhpunitTestCase
         $column->expects($this->any()) //or: $this->exactly(6)
                 ->method('render')
                 ->will($this->onConsecutiveCalls(
-                    '<td>value 11</td>', '<td>value 12</td>', '<td>value 13</td>',
-                    '<td>value 21</td>', '<td>value 22</td>', '<td>value 23</td>'
+                    'value 11', 'value 12', 'value 13',
+                    'value 21', 'value 22', 'value 23'
                 ));
        
         

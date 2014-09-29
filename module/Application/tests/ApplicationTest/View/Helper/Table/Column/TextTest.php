@@ -34,7 +34,7 @@ class TextTest extends \PHPUnit_Framework_TestCase
      * test render
      */
     public function testRender() {
-        $expected = "<td>Claude</td>";
+        $expected = "Claude";
         
         $fixture = 
         [
