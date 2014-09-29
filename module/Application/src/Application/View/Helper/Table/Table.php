@@ -167,5 +167,3 @@ class Table extends AbstractHelper implements ServiceLocatorAwareInterface
         return $this->render();
     }
 }
-
-?>
