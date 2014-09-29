@@ -192,9 +192,13 @@ return
             'table' => 'Application\\View\\Helper\\Table\\Table',
             'text'  => 'Application\\View\\Helper\\Table\\Column\\Text',
         ],
-        /*'abstract_factories' =>
-        [
-            'Application\\View\\Helper\\Table\\Column\\AbstractColumnFactory',
-        ]*/
+    ],
+    'table_columns' =>
+    [
+        'invokables' =>
+            [
+                'text'        => 'Application\View\Helper\Table\Column\Text',
+                'progressBar' => 'Application\View\Helper\Table\Column\ProgressBar',
+            ]
     ],
 ];

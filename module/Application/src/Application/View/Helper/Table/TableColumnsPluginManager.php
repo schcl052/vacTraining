@@ -8,7 +8,7 @@ use \Zend\ServiceManager\AbstractPluginManager;
 
 class TableColumnsPluginManager extends AbstractPluginManager
 {
-    protected $sharedByDefault = false;
+    protected $shareByDefault = false;
     
     public function validatePlugin($plugin) {
         if(!$plugin instanceof AbstractColumn) {

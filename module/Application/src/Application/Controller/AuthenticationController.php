@@ -18,12 +18,14 @@ class AuthenticationController extends AbstractActionController
             ['type' => 'text', 'title' => 'firstname', 'valueKey' => 'firstname'],
             ['type' => 'text', 'title' => 'lastname' , 'valueKey' => 'lastname'],
             ['type' => 'text', 'title' => 'age'      , 'valueKey' => 'age'],
-           // ['type' => 'progressBar', 'title' => '-'      , 'valueKey' => 'age', 'color' => 'red'],
+            ['type' => 'progressBar', 'title' => '-' , 'valueKey' => 'age', 'color' => 'red'],
         ];
         
         $userData = 
         [
             ['id' => 1, 'firstname' => 'Claude', 'lastname' => 'Schmitz', 'age' => 24],
+            ['id' => 2, 'firstname' => 'toto', 'lastname' => 'toto', 'age' => 12],
+            ['id' => 3, 'firstname' => 'titi', 'lastname' => 'titi', 'age' => 50],
         ];
         //$tableColumnPluginManager = $this->getServiceLocator('TableColumnPluginManager');
         return new ViewModel(

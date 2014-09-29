@@ -138,22 +138,22 @@ class Table extends AbstractHelper implements ServiceLocatorAwareInterface
      */
     public function render() {
         $html  = '<table>' .PHP_EOL;
-        $html .= '\t<thead>' .PHP_EOL;
-        $html .= '\t\t<tr>' .PHP_EOL;
+        $html .= '<thead>' .PHP_EOL;
+        $html .= '<tr>' .PHP_EOL;
         foreach($this->columns as $column){
             $html .= '<th>' . $column->getTitle() . '</th>' . PHP_EOL;
         }
-        $html .= '\t\t</tr>'.PHP_EOL;
-        $html .= '\t</thead>'.PHP_EOL;
-        $html .= '\t<tbody>'.PHP_EOL;
+        $html .= '</tr>'.PHP_EOL;
+        $html .= '</thead>'.PHP_EOL;
+        $html .= '<tbody>'.PHP_EOL;
         foreach($this->data as $line){
-            $html .= '\t\t<tr>' .PHP_EOL;        
+            $html .= '<tr>' .PHP_EOL;        
             foreach($this->columns as $column){
-                $html .= '\t\t\t<td>' . $column->render($line) . '</td>' . PHP_EOL;
+                $html .= '<td>' . $column->render($line) . '</td>' . PHP_EOL;
             }
-            $html .= '\t\t</tr>' .PHP_EOL;        
+            $html .= '</tr>' .PHP_EOL;        
         }
-        $html .= '\t</tbody>'.PHP_EOL;
+        $html .= '</tbody>'.PHP_EOL;
         $html .= '</table>'.PHP_EOL;
         
         return $html;

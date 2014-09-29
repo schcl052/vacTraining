@@ -32,16 +32,7 @@ class ProgressBarTest extends PhpunitTestCase
     public function tearDown() {
         $this->instance = null;
     }
-    
-    /**
-     * Test Get Set Progress Data
-     */
-    public function testGetSetProgressData() {
-        $fixture = 17;
-        
-        $this->assertSame($this->instance, $this->instance->setProgressData($fixture));
-        $this->assertSame($fixture, $this->instance->getProgressData());
-    }
+  
     
     /**
      * Test Get Set Color
@@ -61,7 +52,7 @@ class ProgressBarTest extends PhpunitTestCase
         $this->instance->setOptions($options);
         //$this->setInaccessiblePropertyValue('progressData', $options['progressData']);
         //$this->setInaccessiblePropertyValue('color', (isset($options['color'])?$options['color']:null));
-        $this->assertSame($result, $this->instance->render("&nbsp;"));
+        $this->assertSame($result, $this->instance->render($options));
     }
     
     /**
