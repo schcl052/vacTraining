@@ -112,7 +112,7 @@ class Table extends AbstractHelper implements ServiceLocatorAwareInterface
         if(is_null($this->tableColumnPluginManager)) {
             $this->tableColumnPluginManager = $this->getServiceLocator()
                 ->getServiceLocator()
-                ->get('TableColumnsPluginManager');
+                ->get('TableColumnsPluginManager');      
         }
         return $this->tableColumnPluginManager;
     }

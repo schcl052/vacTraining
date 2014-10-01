@@ -102,7 +102,7 @@ class TableTest extends PhpunitTestCase
         $this->setExpectedException('\\Application\\View\\Helper\\Table\\Exception');
         $this->instance->addColumn($columnFixture);
         
-    }    
+    }   
     
     /**
      * test add columns
@@ -315,6 +315,33 @@ class TableTest extends PhpunitTestCase
         
         
         return $viewHelperPluginManagerMock;
+    }
+    
+    public function testGetTableColumnPluginManager() {
+      
+       
+       $tableColumnManagerMock = $this->getMockFromArray('Zend\ServiceManager\ServiceManager', false, []);
+        
+        $serviceManagerMock = $this->getMockFromArray('Zend\ServiceManager\ServiceManager', false,
+        [
+            'get' =>
+            [                
+                'with'    => 'TableColumnsPluginManager',
+                'will'    => $this->returnValue($tableColumnManagerMock)  
+            ]
+        ]);
+        
+        $viewHelperPluginManagerMock = $this->getMockFromArray('Zend\ServiceManager\ServiceManager', false,
+        [
+            'getServiceLocator' =>
+            [
+                'will'    => $this->returnValue($serviceManagerMock)  
+            ]
+        ]);
+       
+        $this->setInaccessiblePropertyValue('serviceLocator', $viewHelperPluginManagerMock);        
+        
+        $this->assertSame($tableColumnManagerMock, $this->instance->getTableColumnPluginManager());
     }
     
     /**
